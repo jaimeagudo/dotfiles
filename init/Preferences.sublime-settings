@@ -1,0 +1,9 @@
+// meant to be copied to ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	]
+}

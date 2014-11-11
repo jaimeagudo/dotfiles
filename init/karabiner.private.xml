@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root> 
+
+<appdef>
+    <appname>EMACS</appname>
+    <equal>org.gnu.Emacs</equal>
+    <equal>org.gnu.AquamacsEmacs</equal>
+    <equal>org.gnu.Aquamacs</equal>
+    <equal>org.pqrs.unknownapp.conkeror</equal>
+  </appdef>
+    <item>
+        <name>Switch Shift_R and Option_R in Emacs</name>
+        <identifier>private.appdef</identifier>
+        <only>EMACS</only>
+    <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::SHIFT_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::OPTION_R</autogen>
+  </item>
+
+
+<item>
+    <name>Change control-y to command-v</name>
+    <identifier>private.emacsmode_control_y_terminal</identifier>
+    <only>TERMINAL</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+</root>
