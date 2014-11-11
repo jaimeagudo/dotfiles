@@ -90,4 +90,4 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+

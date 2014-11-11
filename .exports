@@ -1,5 +1,5 @@
 # Make vim the default editor
-export EDITOR="vim";
+export EDITOR="emacs";
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768;
@@ -20,5 +20,4 @@ export MANPAGER="less -X";
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto";
-
-export SSH_KEY_PATH="~/.ssh/id_rsa_jaime_agudo_lopez.pub"
+export Tlist_Ctags_Cmd="/usr/local/bin/ctags"
