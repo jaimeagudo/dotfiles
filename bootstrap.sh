@@ -9,8 +9,9 @@ function doIt() {
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
 #	source ~/.bash_profile;
 	source ~/.zshrc;
-#	chsh -s /bin/zsh 
-
+#	chsh -s /bin/zsh
+        brew install cask;
+        cask install;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

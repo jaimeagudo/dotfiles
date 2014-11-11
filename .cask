@@ -1,0 +1,28 @@
+;;; package
+(package "jaimeagudodot" "0.0.1" "Favourite packages for Emacs over default Prelude.")
+
+(source gnu)
+(source melpa)
+
+                                        ; A bit of style please
+(depends-on "monokai")
+
+                                        ; Js stuff
+
+(depends-on "js-comint")
+
+                                        ; Clojure stuff
+(depends-on "clojure-mode")
+(depends-on "clj-refactor")
+(depends-on "align-cljlet")
+(depends-on "yasnippet")
+(depends-on "clojure-snippet")
+                                        ; Duplication?
+;(depends-on "projectile")
+;(depends-on "smartparens")
+
+;(depends-on "company")
+;(depends-on "company-etags")
+
+(provide '.cask)
+;;; .cask ends here

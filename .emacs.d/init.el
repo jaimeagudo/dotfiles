@@ -1,6 +1,6 @@
 (require 'package) ;; You might already have this line
-(setq package-archives 
-      '( 
+(setq package-archives
+      '(
         ("marmalade" . "http://marmalade-repo.org/packages/")
         ("elpa" . "http://tromey.com/elpa/")
         ("melpa" . "http://melpa.milkbox.net/packages/")
@@ -8,6 +8,9 @@
         ))
 
 (package-initialize) ;; init elpa packages
+
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,12 +26,31 @@
 (global-set-key (kbd "M-+") "]")
 
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Node.js REPL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(require 'js-comint)
+(setq inferior-js-program-command "nodejs")
+(setenv "NODE_NO_READLINE" "1")
+
+(add-hook 'js2-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
+             (local-set-key (kbd "C-x C-r") 'js-send-region)
+             (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
+             (local-set-key (kbd "C-c b") 'js-send-buffer)
+             (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go)))
+
 ;(add-to-list 'package-archives
  ;            '("melpa" . "http://melpa.org/packages/") t)
 ;(when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
  ; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-;(package-initialize) 
+;(package-initialize)
 
 
 ;; Clojure
@@ -94,7 +116,7 @@ sy                          (lisp-eval-string (format "(require '%s :reload)" sy
                   (interactive "P")
                   (find-tag (first (last (split-string (symbol-name (symbol-at-point)) "/")))
                      next-p)))))
-                                                       
+
 (add-hook 'inferior-lisp-mode-hook
           '(lambda ()
              (define-key inferior-lisp-mode-map
@@ -105,7 +127,9 @@ sy                          (lisp-eval-string (format "(require '%s :reload)" sy
                   (lisp-eval-string "")))))
 
 
+;;;;;;;;;;;;;;;; JS stuff
 
+(require 'nodejs-repl)
 
 ;(load-theme 'monokai)
 
