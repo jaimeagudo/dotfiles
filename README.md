@@ -26,7 +26,8 @@ Alternatively, to update while avoiding the confirmation prompt:
 set -- -f; source bootstrap.sh
 ```
 
+test
 
 ## Original Author
 
- [Mathias Bynens](https://mathiasbynens.be/) 
+[Mathias Bynens](https://mathiasbynens.be/)
